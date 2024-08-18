@@ -16,7 +16,9 @@ export default function Home() {
                     })}
                 </p>
             </div>
-            <Search />
+            <div className="px-5 mt-6">
+                <Search />
+            </div>
         </div>
     );
 }

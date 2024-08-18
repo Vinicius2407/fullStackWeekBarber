@@ -9,7 +9,7 @@ export default function Search() {
         <div className="flex items-center">
             <Input placeholder="Busque por uma barbearia..." />
             <Button variant={"default"}>
-                <SearchIcon size={18} />
+                <SearchIcon size={20} />
             </Button>
         </div>
     )
