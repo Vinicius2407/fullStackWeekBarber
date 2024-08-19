@@ -1,37 +1,51 @@
 "use client"
 
-import { useRouter } from "next/navigation";
-import Image from "next/image";
+import { useRouter } from "next/navigation"
+import Image from "next/image"
 
-import { BarberShop } from "@prisma/client";
+import { BarberShop } from "@prisma/client"
 
-import { Button } from "@/app/_components/ui/button";
-import { ChevronLeftIcon, MenuIcon, MapPinIcon, StarIcon } from "lucide-react";
+import { Button } from "@/app/_components/ui/button"
+import { ChevronLeftIcon, MenuIcon, MapPinIcon, StarIcon } from "lucide-react"
 
 interface BabershopInfoProps {
-    barbershop: BarberShop;
+    barbershop: BarberShop
 }
 
 export default function BarberShopInfo({ barbershop }: BabershopInfoProps) {
-    const router = useRouter();
+    const router = useRouter()
 
     const handleBackClick = () => {
-        router.back();
+        router.back()
     }
 
     return (
         <div>
-            <div className="h-[250px] w-full relative">
-                <Button onClick={handleBackClick} size={"icon"} variant={"outline"} className="z-50 absolute top-4 left-4">
+            <div className="relative h-[250px] w-full">
+                <Button
+                    onClick={handleBackClick}
+                    size={"icon"}
+                    variant={"outline"}
+                    className="absolute left-4 top-4 z-50"
+                >
                     <ChevronLeftIcon />
                 </Button>
 
-                <Button size={"icon"} variant={"outline"} className="z-50 absolute top-4 right-4">
+                <Button
+                    size={"icon"}
+                    variant={"outline"}
+                    className="absolute right-4 top-4 z-50"
+                >
                     <MenuIcon />
                 </Button>
-                <Image src={barbershop.imageURL} fill alt="Imagem da barbearia" className="object-cover opacity-75" />
+                <Image
+                    src={barbershop.imageURL}
+                    fill
+                    alt="Imagem da barbearia"
+                    className="object-cover opacity-75"
+                />
             </div>
-            <div className="pt-3 pb-6 px-5 border-b border-solid border-secondary">
+            <div className="border-b border-solid border-secondary px-5 pb-6 pt-3">
                 <h1 className="text-xl font-bold">{barbershop.name}</h1>
                 <div className="flex items-center gap-2">
                     <MapPinIcon size={18} className="text-primary" />
@@ -43,5 +57,5 @@ export default function BarberShopInfo({ barbershop }: BabershopInfoProps) {
                 </div>
             </div>
         </div>
-    );
+    )
 }
