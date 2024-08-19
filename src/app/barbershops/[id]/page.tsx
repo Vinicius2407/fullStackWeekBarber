@@ -34,7 +34,7 @@ export default async function BabershopDetailsPage({
         <div>
             <BarberShopInfo barbershop={barbershop} />
 
-            <div className="flex flex-col gap-3 px-5 py-6">
+            <div className="flex flex-col gap-4 px-5 py-6">
                 {barbershop.services.map((service) => (
                     <ServiceItem key={service.id} service={service} />
                 ))}

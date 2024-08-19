@@ -32,7 +32,7 @@ export default function ServiceItem({ service }: ServiceItemProps) {
                                 {Intl.NumberFormat("pt-BR", {
                                     style: "currency",
                                     currency: "BRL",
-                                }).format(Number(service.price))}
+                                }).format(Number.parseFloat(service.price.toString()))}
                             </p>
                             <Button variant={"secondary"}>Reservar</Button>
                         </div>
